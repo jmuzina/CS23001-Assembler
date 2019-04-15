@@ -1,0 +1,84 @@
+data3-2-1.txt converted to assembly: 
+-------------------------------------
+--------------------------
+Expression: A B C * *
+Assembly instructions: 
+LD     B
+MU     C
+ST     TMP1
+LD     A
+MU     TMP1
+ST     TMP2
+--------------------------
+Expression: A B C * - E +
+Assembly instructions: 
+LD     B
+MU     C
+ST     TMP1
+LD     A
+SB     TMP1
+ST     TMP2
+LD     TMP2
+AD     E
+ST     TMP3
+--------------------------
+Expression: A B C * + D E - /
+Assembly instructions: 
+LD     B
+MU     C
+ST     TMP1
+LD     A
+AD     TMP1
+ST     TMP2
+LD     D
+SB     E
+ST     TMP3
+LD     TMP2
+DV     TMP3
+ST     TMP4
+--------------------------
+Expression: A B * C / D E + F * -
+Assembly instructions: 
+LD     A
+MU     B
+ST     TMP1
+LD     TMP1
+DV     C
+ST     TMP2
+LD     D
+AD     E
+ST     TMP3
+LD     TMP3
+MU     F
+ST     TMP4
+LD     TMP2
+SB     TMP4
+ST     TMP5
+--------------------------
+Expression: AX BX * CX DY - EX * FX * GY * HX * JY + +
+Assembly instructions: 
+LD     AX
+MU     BX
+ST     TMP1
+LD     CX
+SB     DY
+ST     TMP2
+LD     TMP2
+MU     EX
+ST     TMP3
+LD     TMP3
+MU     FX
+ST     TMP4
+LD     TMP4
+MU     GY
+ST     TMP5
+LD     TMP5
+MU     HX
+ST     TMP6
+LD     TMP6
+AD     JY
+ST     TMP7
+LD     TMP1
+AD     TMP7
+ST     TMP8
+
